@@ -1,0 +1,34 @@
+# ===================================================================================== #
+#        GitHub Actions configuration file for the AWS IoT Sandbox Infra project        #
+#                                                                                       #
+# This workflow will:                                                                   #
+#   1. Create AWS resources for the dev environment using Terraform.                    #
+# ===================================================================================== #
+
+name: on IaC PR against [develop]
+
+on:
+  pull_request:
+    branches: [develop]
+    paths:
+      - ".github/workflows/on-iac-*.yaml"
+      - "environments/**"
+      - "modules/**"
+
+jobs:
+
+# ===================================================================================== #
+#                   CREATE THE AWS RESOURCES FOR THE DEV ENVIRONMENT                    #
+# ===================================================================================== #
+  terraform-qa-infrastructure:
+    environment: dev
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: hashicorp/setup-terraform@v2
+      - name: Terraform style check
+        run: terraform fmt -check -recursive ./environments ./modules
+      - name: Terraform validate
+        run: |
+          terraform -chdir=./environments validate
+          terraform -chdir=./modules validate

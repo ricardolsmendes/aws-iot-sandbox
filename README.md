@@ -1,1 +1,1 @@
-# aws-iot-sandbox
+# aws-iot-sandbox-infra
