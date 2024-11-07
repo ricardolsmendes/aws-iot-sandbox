@@ -20,7 +20,7 @@ jobs:
 # ===================================================================================== #
 #                   CREATE THE AWS RESOURCES FOR THE DEV ENVIRONMENT                    #
 # ===================================================================================== #
-  terraform-qa-infrastructure:
+  terraform-dev-infrastructure:
     environment: dev
     runs-on: ubuntu-latest
     steps:
