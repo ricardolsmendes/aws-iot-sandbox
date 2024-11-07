@@ -1,35 +1,35 @@
 resource "aws_iot_thing_group" "industrial_devices" {
-  name = "Industrial devices"
+  name = "industrial-devices"
 }
 
 resource "aws_iot_thing_group" "logistics_devices" {
-  name = "Llogistics devices"
+  name = "logistics-devices"
 }
 
 resource "aws_iot_thing_group" "medical_devices" {
-  name = "Medical devices"
+  name = "medical-devices"
 }
 
 resource "aws_iot_thing_group" "personal_transportation_devices" {
-  name = "Personal transportation devices"
+  name = "personal-transportation-devices"
 }
 
 resource "aws_iot_thing_group" "point_of_sale_devices" {
-  name = "Point of sale devices"
+  name = "point-of-sale-devices"
 }
 
 resource "aws_iot_thing_group" "security_devices" {
-  name = "Security devices"
+  name = "security-devices"
 }
 
 resource "aws_iot_thing_group" "sensors" {
-  name = "Sensors"
+  name = "sensors"
 }
 
 resource "aws_iot_thing_group" "smart_home_devices" {
-  name = "Smart home devices"
+  name = "smart-home-devices"
 }
 
 resource "aws_iot_thing_group" "smart_wearables" {
-  name = "Smart wearables"
+  name = "smart-wearables"
 }
