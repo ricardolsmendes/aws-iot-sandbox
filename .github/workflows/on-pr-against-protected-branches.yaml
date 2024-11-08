@@ -1,0 +1,33 @@
+# ===================================================================================== #
+#        GitHub Actions configuration file for the AWS IoT Sandbox Infra project        #
+#                                                                                       #
+# This workflow will:                                                                   #
+#   1. Validate Terraform configurations.                                               #
+# ===================================================================================== #
+
+name: on PR against protected branches
+
+on:
+  pull_request:
+    branches: [develop, main]
+    paths:
+      - ".github/workflows/on-pr-against-protected-branches.yaml"
+      - "environments/**"
+      - "modules/**"
+
+jobs:
+
+# ===================================================================================== #
+#                          VALIDATES TERRAFORM CONFIGURATIONS                           #
+# ===================================================================================== #
+  validate-terraform-configurations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: hashicorp/setup-terraform@v2
+      - name: Terraform style check
+        run: terraform fmt -check -recursive ./environments ./modules
+      - name: Terraform validate
+        run: |
+          terraform -chdir=./environments validate
+          terraform -chdir=./modules validate
