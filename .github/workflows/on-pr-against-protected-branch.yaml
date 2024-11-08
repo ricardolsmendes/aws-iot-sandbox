@@ -5,13 +5,13 @@
 #   1. Validate Terraform configurations.                                               #
 # ===================================================================================== #
 
-name: on PR against protected branches
+name: on PR against protected branch
 
 on:
   pull_request:
     branches: [develop, main]
     paths:
-      - ".github/workflows/on-pr-against-protected-branches.yaml"
+      - ".github/workflows/on-pr-against-protected-branch.yaml"
       - "environments/**"
       - "modules/**"
 
