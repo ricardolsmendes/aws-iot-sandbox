@@ -1,35 +1,37 @@
-resource "aws_iot_thing_group" "industrial_devices" {
-  name = "industrial-devices-${var.environment}"
+locals {
+  thing_groups_map = {
+    industrial_devices = {
+      name = "industrial-devices"
+    },
+    logistics_devices = {
+      name = "logistics-devices"
+    },
+    medical_devices = {
+      name = "medical-devices"
+    },
+    personal_transportation_devices = {
+      name = "personal-transportation-devices"
+    },
+    point_of_sale_devices = {
+      name = "point-of-sale-devices"
+    },
+    security_devices = {
+      name = "security-devices"
+    },
+    sensors = {
+      name = "sensors"
+    },
+    smart_home_devices = {
+      name = "smart-home-devices"
+    },
+    smart_wearables = {
+      name = "smart-wearables"
+    }
+  }
 }
 
-resource "aws_iot_thing_group" "logistics_devices" {
-  name = "logistics-devices-${var.environment}"
-}
+resource "aws_iot_thing_group" "thing_groups" {
+  for_each = local.thing_groups_map
 
-resource "aws_iot_thing_group" "medical_devices" {
-  name = "medical-devices-${var.environment}"
-}
-
-resource "aws_iot_thing_group" "personal_transportation_devices" {
-  name = "personal-transportation-devices-${var.environment}"
-}
-
-resource "aws_iot_thing_group" "point_of_sale_devices" {
-  name = "point-of-sale-devices-${var.environment}"
-}
-
-resource "aws_iot_thing_group" "security_devices" {
-  name = "security-devices-${var.environment}"
-}
-
-resource "aws_iot_thing_group" "sensors" {
-  name = "sensors-${var.environment}"
-}
-
-resource "aws_iot_thing_group" "smart_home_devices" {
-  name = "smart-home-devices-${var.environment}"
-}
-
-resource "aws_iot_thing_group" "smart_wearables" {
-  name = "smart-wearables-${var.environment}"
+  name = "${each.value.name}-${var.environment}"
 }
