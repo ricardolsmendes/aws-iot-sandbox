@@ -30,7 +30,7 @@ locals {
     temperature_sensor = {
       name = "temperature-sensor"
     },
-    ibration_sensor = {
+    vibration_sensor = {
       name = "vibration-sensor"
     },
     water_quality_sensor = {
