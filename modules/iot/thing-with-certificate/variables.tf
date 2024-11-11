@@ -22,3 +22,10 @@ variable "group" {
     name = string
   })
 }
+
+variable "certificates_bucket" {
+  description = "The bucket used to stored the security certificates."
+  type = object({
+    id = string
+  })
+}

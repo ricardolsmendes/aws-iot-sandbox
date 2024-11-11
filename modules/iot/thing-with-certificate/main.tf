@@ -1,5 +1,5 @@
 resource "aws_iot_thing" "thing" {
-  name            = var.name
+  name            = "${var.name}-${var.environment}"
   thing_type_name = var.type.name
 }
 

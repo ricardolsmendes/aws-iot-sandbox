@@ -12,8 +12,9 @@ module "things_with_certificates" {
   source   = "./thing-with-certificate"
   for_each = local.things_map
 
-  environment = var.environment
-  name        = "${each.value.name}-${var.environment}"
-  type        = each.value.type
-  group       = each.value.group
+  environment         = var.environment
+  name                = each.value.name
+  type                = each.value.type
+  group               = each.value.group
+  certificates_bucket = aws_s3_bucket.certificates
 }
