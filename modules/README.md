@@ -2,4 +2,4 @@
 
 | Name | Source |
 |------|--------|
-| iot-core | [./thing-with-certificate](./thing-with-certificate) |
+| iot-core | [./iot-core](./iot-core) |
