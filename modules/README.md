@@ -2,6 +2,6 @@
 
 | Name | Source |
 |------|--------|
-| iot-core | [./iot-core](./iot-core) |
+| iot-core-sandbox | [./iot-core-sandbox](./iot-core-sandbox) |
 
 [<< back](..)

@@ -1,4 +1,4 @@
-# iot-core module
+# iot-core-sandbox module
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements

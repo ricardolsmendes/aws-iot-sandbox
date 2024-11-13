@@ -34,17 +34,17 @@ resource "aws_s3_object" "certificate_private_key" {
 }
 
 # Stores the certificate in Secrets Manager.
-resource "aws_secretsmanager_secret" "this" {
-  name = "iot-core/things/${aws_iot_thing.this.name}"
-}
+# resource "aws_secretsmanager_secret" "this" {
+#   name = "iot-core/things/${aws_iot_thing.this.name}"
+# }
 
-resource "aws_secretsmanager_secret_version" "this" {
-  secret_id = aws_secretsmanager_secret.this.id
-  secret_string = jsonencode({
-    "cert.pem"    = aws_iot_certificate.this.certificate_pem
-    "private.key" = aws_iot_certificate.this.private_key
-  })
-}
+# resource "aws_secretsmanager_secret_version" "this" {
+#   secret_id = aws_secretsmanager_secret.this.id
+#   secret_string = jsonencode({
+#     "cert.pem"    = aws_iot_certificate.this.certificate_pem
+#     "private.key" = aws_iot_certificate.this.private_key
+#   })
+# }
 
 # ===================================================================================== #
 #                                   POLICY MANAGEMENT                                   #
