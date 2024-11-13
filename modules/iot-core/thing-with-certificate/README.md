@@ -19,16 +19,18 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_iot_certificate.cert](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iot_certificate) | resource |
-| [aws_iot_policy.publish_telemetry](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iot_policy) | resource |
-| [aws_iot_policy_attachment.publish_telemetry](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iot_policy_attachment) | resource |
-| [aws_iot_thing.thing](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iot_thing) | resource |
-| [aws_iot_thing_group_membership.thing_group_membership](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iot_thing_group_membership) | resource |
-| [aws_iot_thing_principal_attachment.thing_certificate_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iot_thing_principal_attachment) | resource |
+| [aws_iot_certificate.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iot_certificate) | resource |
+| [aws_iot_policy.publish](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iot_policy) | resource |
+| [aws_iot_policy_attachment.publish](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iot_policy_attachment) | resource |
+| [aws_iot_thing.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iot_thing) | resource |
+| [aws_iot_thing_group_membership.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iot_thing_group_membership) | resource |
+| [aws_iot_thing_principal_attachment.thing_certificate](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iot_thing_principal_attachment) | resource |
 | [aws_s3_object.certificate_pem](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_object) | resource |
-| [aws_s3_object.private_key](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_object) | resource |
+| [aws_s3_object.certificate_private_key](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_object) | resource |
+| [aws_secretsmanager_secret.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/secretsmanager_secret) | resource |
+| [aws_secretsmanager_secret_version.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/secretsmanager_secret_version) | resource |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
-| [aws_iam_policy_document.publish_telemetry](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
+| [aws_iam_policy_document.publish](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 | [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) | data source |
 
 ## Inputs
