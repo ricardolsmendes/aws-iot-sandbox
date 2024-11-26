@@ -24,3 +24,9 @@ module "things_with_certificates" {
   group               = each.value.group
   certificates_bucket = aws_s3_bucket.certificates
 }
+
+module "rule_with_lambda" {
+  source = "./rule-with-lambda"
+
+  environment = var.environment
+}
