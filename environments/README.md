@@ -1,9 +1,7 @@
 # AWS IoT Sandbox — environments
 
-| Name | Source |
-|------|--------|
-| development | [./development](./development) |
-| staging | [./staging](./staging) |
-| production | [./production](./production) |
+- [./development](./development)
+- [./staging](./staging)
+- [./production](./production)
 
 [<< back](..)
