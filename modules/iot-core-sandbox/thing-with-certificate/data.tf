@@ -18,7 +18,7 @@ data "aws_iam_policy_document" "publish" {
       "iot:Publish"
     ]
     resources = [
-      "arn:aws:iot:${data.aws_region.current.name}:${data.aws_caller_identity.current.id}:topic/$aws/things/${aws_iot_thing.this.name}/data"
+      "arn:aws:iot:${data.aws_region.current.name}:${data.aws_caller_identity.current.id}:topic/${local.topic_name}"
     ]
   }
 }
