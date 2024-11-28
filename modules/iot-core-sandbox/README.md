@@ -15,6 +15,8 @@ No requirements.
 
 | Name | Source | Version |
 |------|--------|---------|
+| <a name="module_lambda_functions"></a> [lambda\_functions](#module\_lambda\_functions) | ./lambda-functions | n/a |
+| <a name="module_rules_with_lambda"></a> [rules\_with\_lambda](#module\_rules\_with\_lambda) | ./rule-with-lambda | n/a |
 | <a name="module_things_with_certificates"></a> [things\_with\_certificates](#module\_things\_with\_certificates) | ./thing-with-certificate | n/a |
 
 ## Resources

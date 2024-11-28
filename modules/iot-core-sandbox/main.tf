@@ -25,8 +25,8 @@ module "things_with_certificates" {
   certificates_bucket = aws_s3_bucket.certificates
 }
 
-module "lambdas" {
-  source = "./lambdas"
+module "lambda_functions" {
+  source = "./lambda-functions"
 
   environment = var.environment
 }
@@ -39,5 +39,5 @@ module "rules_with_lambda" {
   rule_name           = "PrintEventRule_${local.things[each.key].name}"
   rule_description    = "Print events published to the '${module.things_with_certificates[each.key].topic_name}' topic."
   topic_name          = module.things_with_certificates[each.key].topic_name
-  lambda_function_arn = module.lambdas.event_printer_lambda_arn
+  lambda_function_arn = module.lambda_functions.event_printer_arn
 }
