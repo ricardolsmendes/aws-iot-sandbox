@@ -24,3 +24,20 @@ module "things_with_certificates" {
   group               = each.value.group
   certificates_bucket = aws_s3_bucket.certificates
 }
+
+module "lambda_functions" {
+  source = "./lambda-functions"
+
+  environment = var.environment
+}
+
+module "rules_with_lambda" {
+  source   = "./rule-with-lambda"
+  for_each = local.things
+
+  environment         = var.environment
+  rule_name           = "PrintEventRule_${local.things[each.key].name}"
+  rule_description    = "Print events published to the '${module.things_with_certificates[each.key].topic_name}' topic."
+  topic_name          = module.things_with_certificates[each.key].topic_name
+  lambda_function_arn = module.lambda_functions.event_printer_arn
+}
