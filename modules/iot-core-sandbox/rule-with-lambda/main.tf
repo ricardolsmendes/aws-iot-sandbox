@@ -1,4 +1,4 @@
-resource "aws_iot_topic_rule" "rule" {
+resource "aws_iot_topic_rule" "this" {
   name        = replace("${var.rule_name}_${var.environment}", "-", "_")
   description = var.rule_description
   enabled     = true
