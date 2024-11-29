@@ -19,7 +19,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_iot_topic_rule.rule](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iot_topic_rule) | resource |
+| [aws_iot_topic_rule.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iot_topic_rule) | resource |
 
 ## Inputs
 
