@@ -31,13 +31,16 @@ module "lambda_functions" {
   environment = var.environment
 }
 
-module "rules_with_lambda" {
-  source   = "./rule-with-lambda"
+resource "aws_iot_topic_rule" "print_event_rules" {
   for_each = local.things
 
-  environment         = var.environment
-  rule_name           = "PrintEventRule_${local.things[each.key].name}"
-  rule_description    = "Print events published to the '${module.things_with_certificates[each.key].topic_name}' topic."
-  topic_name          = module.things_with_certificates[each.key].topic_name
-  lambda_function_arn = module.lambda_functions.event_printer_arn
+  name        = replace("PrintEventRule_${local.things[each.key].name}_${var.environment}", "-", "_")
+  description = "Print events published to the '${module.things_with_certificates[each.key].topic_name}' topic."
+  enabled     = true
+  sql         = "SELECT * FROM '${module.things_with_certificates[each.key].topic_name}'"
+  sql_version = "2016-03-23"
+
+  lambda {
+    function_arn = module.lambda_functions.event_printer_arn
+  }
 }

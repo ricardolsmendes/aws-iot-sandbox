@@ -16,7 +16,6 @@ No requirements.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_lambda_functions"></a> [lambda\_functions](#module\_lambda\_functions) | ./lambda-functions | n/a |
-| <a name="module_rules_with_lambda"></a> [rules\_with\_lambda](#module\_rules\_with\_lambda) | ./rule-with-lambda | n/a |
 | <a name="module_things_with_certificates"></a> [things\_with\_certificates](#module\_things\_with\_certificates) | ./thing-with-certificate | n/a |
 
 ## Resources
@@ -25,6 +24,7 @@ No requirements.
 |------|------|
 | [aws_iot_thing_group.thing_groups](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iot_thing_group) | resource |
 | [aws_iot_thing_type.thing_types](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iot_thing_type) | resource |
+| [aws_iot_topic_rule.print_event_rules](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iot_topic_rule) | resource |
 | [aws_s3_bucket.certificates](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
 
 ## Inputs
